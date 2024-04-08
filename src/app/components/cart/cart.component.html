@@ -1,0 +1,41 @@
+<section class="w-75 mx-auto bg-main-light rounded-3 my-2 p-3">
+    <h1>Your Cart</h1>
+    <div *ngIf="!cartInfo.products?.length" class="text-center">
+      <h3 class=" text-main my-3">Your Cart is Empty</h3>
+      <button class="btn-main" routerLink="/home">Browse Our Products</button>
+    </div>
+    <div *ngIf="cartInfo.products?.length">
+    <p class="text-main">Total Cart Price : {{cartInfo.totalCartPrice}} EGP</p>
+    <div class="row border-bottom py-2 align-items-center"  *ngFor="let item of cartInfo.products">
+      <div class="col-md-2">
+        <img [src]="item.product.imageCover" alt="" class="w-100">
+      </div>
+      <div class="col-md-10">
+      <div class="d-flex justify-content-between align-items-center">
+          <!-- item details -->
+          <div>
+            <h3 class="h5">{{item.product.title}}</h3>
+            <p class="text-main mt-3">{{item.price}} EGP</p>
+            <p class="text-main"> Total Price: {{(item.price)*(item.count)}} EGP</p>
+            <button (click)="removeItem(item.product._id)" class="btn m-0 p-0 remove-btn"><i class="fa-regular fa-trash-can"></i> Remove</button>
+        </div>
+        <!-- add/remove buttons -->
+        <div>
+            <button (click)="changeCount(item.product._id , item.count+1)" class="btn btn-plus-minus"><i class="fa-solid fa-plus"></i></button>
+            <span class="fw-bold mx-3">{{item.count}}</span>
+            <button (click)="changeCount(item.product._id , item.count-1)" class="btn btn-plus-minus" [disabled]="item.count==1"><i class="fa-solid fa-minus"></i></button>
+        </div>
+      </div>
+      </div>
+    </div>
+    
+    <div class="d-flex mt-3">
+
+      <button class="btn-main" [routerLink]="['/checkout', cartInfo._id]">Proceed to Checkout</button>
+      <button class="btn-main-clear ms-auto" (click)="clear()">Clear Cart</button>
+    </div>
+    
+  </div>
+    
+
+</section>

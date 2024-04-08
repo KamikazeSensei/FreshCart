@@ -1,0 +1,11 @@
+:host{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+    background-image: url(../../../assets/IMG/light-patten.svg);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+}

@@ -1,0 +1,21 @@
+<section class="my-4">
+
+    <div class="row g-4 d-flex justify-content-center">
+
+        <h2>Search Brands</h2>
+        
+        <input type="search" class="form-control w-100 my-3 mx-auto" placeholder="Search Popular Products" [(ngModel)]="searchTerm">
+
+        <div class="col-sm-6 col-md-4" *ngFor = "let brand of brands | brandsearch: searchTerm">
+
+            <div class="product p-2 cursor-pointer" [routerLink]="['/brandsdetails' , brand._id]">
+    
+               <div class="py-2 my-2">
+                <img [src]="brand.image" [alt]="brand.name" class="w-100" >
+                <h3 class="h6 text-main my-4 text-center">{{brand.name | uppercase}}</h3>
+               </div>
+                
+            </div>
+        </div>
+    </div>
+    </section>
