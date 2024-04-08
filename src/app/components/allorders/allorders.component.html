@@ -1,4 +1,11 @@
-<section class="w-75 mx-auto bg-main-light rounded-3 my-4 p-3">
+<section  class="w-75 mx-auto bg-main-light rounded-3 my-4 p-3">
+
+    <div class="text-center" *ngIf="!orders.length">
+      <h1>Looks Like you Have no Orders Yet</h1>
+      <button class="btn-main mt-3" [routerLink]="['/home']">Browse Our Products</button>
+    </div>
+  <div *ngIf="orders.length">
+
     <h1>Your Orders :</h1>
     <div class="row border-bottom py-2 align-items-center" *ngFor="let order of orders">
       <div class="col-md-2">
@@ -21,5 +28,7 @@
     </div>
 
     <button class="btn-main mt-3" [routerLink]="['/home']">Return Home</button>
+  </div>
+ 
 
 </section>
