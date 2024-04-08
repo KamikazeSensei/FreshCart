@@ -22,11 +22,11 @@ body {
   background-color: var(--main-color) !important;
   color: var(--light-color) !important;
   border-radius: 5px;
-  i{
-    color: var(--light-color) !important;
-  }
+  
 }
-
+.active-link i{
+    color: var(--light-color) !important;
+}
 
 .rating-color {
   color: var(--rating-color);
