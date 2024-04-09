@@ -2,7 +2,7 @@
     <h1>Your Cart</h1>
     <div *ngIf="!cartInfo.products?.length" class="text-center">
       <h3 class=" text-main my-3">Your Cart is Empty</h3>
-      <button class="btn-main" routerLink="/home">Browse Our Products</button>
+      <button class="btn-main" routerLink="/products">Browse Our Products</button>
     </div>
     <div *ngIf="cartInfo.products?.length">
     <p class="text-main">Total Cart Price : {{cartInfo.totalCartPrice}} EGP</p>

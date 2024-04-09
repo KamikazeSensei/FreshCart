@@ -2,7 +2,7 @@
     <h1>Your Wishlist :</h1>
     <div *ngIf="!wishlistDetails.data?.length" class="text-center">
       <h3 class=" text-main my-3">Your Wishlist is Empty</h3>
-      <button class="btn-main" routerLink="/home">Browse Our Products</button>
+      <button class="btn-main" routerLink="/products">Browse Our Products</button>
     </div>
     <div *ngIf="wishlistDetails.data?.length">
     <div class="row border-bottom py-2 align-items-center"  *ngFor="let item of wishlistDetails.data">
